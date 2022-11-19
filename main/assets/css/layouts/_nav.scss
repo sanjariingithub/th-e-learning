@@ -26,21 +26,41 @@
     &__item {
      
         &--action{
-            display: flex;
-        justify-content: space-between;
-        button:not(:last-child){
-            margin-right: 10px;
-        }
-          button{
-            font-size: 1em;
+            ul{
+                display: flex;
+                justify-content: space-between;
+                li{
+                    &:not(:last-child){
+                        margin-right: 10px;
+                    }
+                    &:hover {
+                        color:$primaryColor;
+                    }
+
+                    a {
+                        color: #000000;
+                    }
+                }
+            }
+          li{
+            //design for sign-up button
+                font-size: 1em;
+                font-weight: 700;         
+          }
+          .icon-serach{
+            font-size: 1.5em;
+            font-weight: 700;
+            padding: 10px;
+
+          }
+
+          .icon-actionbar {
+            font-size: 1.5em;
             font-weight: 700;
           }
-          .actionbar{
-            font-size: 1.5em;
-          }
+
            
         }
-
       
     }
     }
@@ -57,43 +77,34 @@
                 font-size: 1em;
                 color: #000000;
                 font-weight: 500;
-                &:hover {
-                    .nav-link {
-                        &:after {
-                            width: 100%;
-                        }
-                    }
-                }
             }
-
+            
             &-link {
-                position: relative;
-                padding-bottom: 4px;
-                transition: color 0.3s linear;
-                font-weight: 500;
+                    font-size: 1em;
+                    line-height: 1;
+                    cursor: pointer;
+                    color: #000000;
+                    transition: color 0.3s linear;
+                    position: relative;
 
-                &:after {
-                    content: "";
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    width: 0;
-                    height: 2px;
-                    border-radius: 2px;
-                    background-color: $maincolor;
-                    transition: width 0.2s ease-in-out;
-                }
+                    &:hover {
+                        color:$primaryColor;
+                    }
+
+                    a {
+                        color: #000000;
+                    }
 
                 &.active {
-                    color: $maincolor;
+                   color:$primaryColor;
 
                     &:after {
                         width: 100%;
                     }
-                }
+               }
 
                 
-            }
+           }
         }
     }
     &-brand {
@@ -106,6 +117,58 @@
     }
    
 }
+.navbar-nav {
+    .nav-item {
+        a {
+            &.dropdown-toggle {
+                &:after {
+                    content: "\f107";
+                    font-family: "Line Awesome Free";
+                    font-weight: 900;
+                    border: 0;
+                    vertical-align: 1px;
+                    line-height: 1;
+                    font-size: 0.9em;
+                    margin-left: 1px;
+                }
+            }
+        }
+
+        &.dropdown {
+            .dropdown-menu {
+                margin-top: 0;
+                margin-bottom: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+                font-size: 1em;
+                border: 0;
+                border-radius: 5px;
+                box-shadow: 0 4px 11px 0 rgb(0 0 0 / 7%);
+                transform: translateY(10px);
+                
+
+                li {
+                    font-size: 1em;
+                    font-weight: 500;
+
+                    a {
+                        padding-left: 0.8em;
+                        padding-right: 0.8em;
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
 //off canvas 
 .offcanvas{
     ul li{
@@ -117,7 +180,39 @@
     .navbar.navbar-expand-lg .nav-item {
          margin-left: 0px;
          margin-right: 0px;
+         padding: 15px 15px;
+         border-bottom: 1px solid #E3E3E3;
+         
 }
+
+
+.navbar{
+    &-content{
+        .offcanvas{
+           .offcanvas-header{
+                  button{
+                    font-size: 1.6em;
+                  }
+           }
+        }
+         &__item{
+            &--action{
+                .main-btn {
+                    padding: 8px 30px;
+                    font-size: 0.9em;
+                     font-weight: 500;
+                }
+                .icon-serach{
+                    font-size: 1.5em;
+                    font-weight: 700;
+                   padding: 0;
+        
+                  } 
+            }
+         }
+    }
+}
+
 }
 @include breakpoint-max(575px) {
     .navbar{
@@ -132,15 +227,15 @@
                 }
                 &--action{
                     .main-btn {
-                        padding: 0.1375em 0.17em;
+                        padding: 4px 10px;
                         font-size: 0.9em;
                          font-weight: 500;
                     }
                     .main-btn__border {
-                        border: 1px solid #05A8AA;
+                        border: 1px solid $primaryColor;
                         background-color: transparent;
-                        color: #05A8AA;
-                        border-radius: 4px;
+                        color: $primaryColor;
+                        border-radius: 6px;
                     }
                   .actionbar{
                     font-size: 1em;

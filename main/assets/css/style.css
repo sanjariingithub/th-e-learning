@@ -7,7 +7,7 @@
 }
 
 .t-clr-primary {
-  color: #0C0C0C !important;
+  color: #05A8AA !important;
 }
 
 .t-clr-secondary {
@@ -35,8 +35,18 @@
   padding-bottom: 100px;
 }
 
+button {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+}
+button:active, button:focus {
+  outline: 0;
+  border: 0;
+}
+
 .main-btn {
-  padding: 5px 25px;
+  padding: 16px 38px;
   border-radius: 8px;
   border: 0;
   background-color: #05A8AA;
@@ -72,19 +82,31 @@
   justify-content: space-between;
   flex: 1;
 }
-.navbar-content__item--action {
+.navbar-content__item--action ul {
   display: flex;
   justify-content: space-between;
 }
-.navbar-content__item--action button:not(:last-child) {
+.navbar-content__item--action ul li:not(:last-child) {
   margin-right: 10px;
 }
-.navbar-content__item--action button {
+.navbar-content__item--action ul li:hover {
+  color: #05A8AA;
+}
+.navbar-content__item--action ul li a {
+  color: #000000;
+}
+.navbar-content__item--action li {
   font-size: 1em;
   font-weight: 700;
 }
-.navbar-content__item--action .actionbar {
+.navbar-content__item--action .icon-serach {
   font-size: 1.5em;
+  font-weight: 700;
+  padding: 10px;
+}
+.navbar-content__item--action .icon-actionbar {
+  font-size: 1.5em;
+  font-weight: 700;
 }
 .navbar.navbar-expand-lg {
   background-color: #ffffff;
@@ -98,25 +120,19 @@
   color: #000000;
   font-weight: 500;
 }
-.navbar.navbar-expand-lg .nav-item:hover .nav-link:after {
-  width: 100%;
-}
 .navbar.navbar-expand-lg .nav-link {
-  position: relative;
-  padding-bottom: 4px;
+  font-size: 1em;
+  line-height: 1;
+  cursor: pointer;
+  color: #000000;
   transition: color 0.3s linear;
-  font-weight: 500;
+  position: relative;
 }
-.navbar.navbar-expand-lg .nav-link:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  border-radius: 2px;
-  background-color: #05A8AA;
-  transition: width 0.2s ease-in-out;
+.navbar.navbar-expand-lg .nav-link:hover {
+  color: #05A8AA;
+}
+.navbar.navbar-expand-lg .nav-link a {
+  color: #000000;
 }
 .navbar.navbar-expand-lg .nav-link.active {
   color: #05A8AA;
@@ -133,6 +149,39 @@
   vertical-align: -6px;
 }
 
+.navbar-nav .nav-item a.dropdown-toggle:after {
+  content: "\f107";
+  font-family: "Line Awesome Free";
+  font-weight: 900;
+  border: 0;
+  vertical-align: 1px;
+  line-height: 1;
+  font-size: 0.9em;
+  margin-left: 1px;
+}
+.navbar-nav .nav-item.dropdown .dropdown-menu {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 1em;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.07);
+  transform: translateY(10px);
+}
+.navbar-nav .nav-item.dropdown .dropdown-menu li {
+  font-size: 1em;
+  font-weight: 500;
+}
+.navbar-nav .nav-item.dropdown .dropdown-menu li a {
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+}
+.navbar-nav .nav-item.dropdown .dropdown-menu li a:hover, .navbar-nav .nav-item.dropdown .dropdown-menu li a:focus, .navbar-nav .nav-item.dropdown .dropdown-menu li a:active {
+  background-color: transparent;
+}
+
 .offcanvas ul li {
   padding: 10px;
 }
@@ -141,6 +190,21 @@
   .navbar.navbar-expand-lg .nav-item {
     margin-left: 0px;
     margin-right: 0px;
+    padding: 15px 15px;
+    border-bottom: 1px solid #E3E3E3;
+  }
+  .navbar-content .offcanvas .offcanvas-header button {
+    font-size: 1.6em;
+  }
+  .navbar-content__item--action .main-btn {
+    padding: 8px 30px;
+    font-size: 0.9em;
+    font-weight: 500;
+  }
+  .navbar-content__item--action .icon-serach {
+    font-size: 1.5em;
+    font-weight: 700;
+    padding: 0;
   }
 }
 @media (max-width: 575px) {
@@ -148,7 +212,7 @@
     max-width: 60%;
   }
   .navbar-content__item--action .main-btn {
-    padding: 0.1375em 0.17em;
+    padding: 4px 10px;
     font-size: 0.9em;
     font-weight: 500;
   }
@@ -156,7 +220,7 @@
     border: 1px solid #05A8AA;
     background-color: transparent;
     color: #05A8AA;
-    border-radius: 4px;
+    border-radius: 6px;
   }
   .navbar-content__item--action .actionbar {
     font-size: 1em;
