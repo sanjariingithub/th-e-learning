@@ -1,0 +1,152 @@
+// Add variables here
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Overrides Bootstrap
+.nav-link {
+    padding: 0;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 0;
+}
+.navbar-expand-lg{
+    .offcanvas{
+        flex: 0 0 auto;
+    }
+}
+
+// Style Nav
+.navbar {
+    &-content{
+     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    &__item {
+     
+        &--action{
+            display: flex;
+        justify-content: space-between;
+        button:not(:last-child){
+            margin-right: 10px;
+        }
+          button{
+            font-size: 1em;
+            font-weight: 700;
+          }
+          .actionbar{
+            font-size: 1.5em;
+          }
+           
+        }
+
+      
+    }
+    }
+
+    &.navbar-expand-lg {
+        background-color: #ffffff;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        .nav {
+            &-item {
+                margin-left: 20px;
+                margin-right: 20px;
+                font-size: 1em;
+                color: #000000;
+                font-weight: 500;
+                &:hover {
+                    .nav-link {
+                        &:after {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            &-link {
+                position: relative;
+                padding-bottom: 4px;
+                transition: color 0.3s linear;
+                font-weight: 500;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    border-radius: 2px;
+                    background-color: $maincolor;
+                    transition: width 0.2s ease-in-out;
+                }
+
+                &.active {
+                    color: $maincolor;
+
+                    &:after {
+                        width: 100%;
+                    }
+                }
+
+                
+            }
+        }
+    }
+    &-brand {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-right: 0;
+        img {
+            vertical-align: -6px;
+        }
+    }
+   
+}
+//off canvas 
+.offcanvas{
+    ul li{
+        padding: 10px;
+    }
+}
+//nav responsive
+@include breakpoint-max(991px){
+    .navbar.navbar-expand-lg .nav-item {
+         margin-left: 0px;
+         margin-right: 0px;
+}
+}
+@include breakpoint-max(575px) {
+    .navbar{
+        &-content{
+             &__item{
+                &__brand{
+                    a{
+                        img{
+                            max-width: 60%;
+                        }
+                    }
+                }
+                &--action{
+                    .main-btn {
+                        padding: 0.1375em 0.17em;
+                        font-size: 0.9em;
+                         font-weight: 500;
+                    }
+                    .main-btn__border {
+                        border: 1px solid #05A8AA;
+                        background-color: transparent;
+                        color: #05A8AA;
+                        border-radius: 4px;
+                    }
+                  .actionbar{
+                    font-size: 1em;
+                  }
+                }
+             }
+        }
+    }
+}

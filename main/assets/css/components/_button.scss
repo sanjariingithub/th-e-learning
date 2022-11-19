@@ -1,0 +1,28 @@
+// Add variables here
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Button CSS
+.main-btn {
+    padding: 5px 25px;
+    border-radius: 8px;
+    border: 0;
+    background-color: $maincolor;
+    color: #ffffff;
+    font-size: 1em;
+    &__border {
+        border: 2px solid $maincolor;
+        background-color: transparent;
+        color: $maincolor;
+
+        //padding-top: 8px;
+        //padding-bottom: 8px;
+    }
+}
+
+@include breakpoint-max(767px){
+    .main-btn {
+        padding: 0.6375em 1.175em;
+    }
+
+}
