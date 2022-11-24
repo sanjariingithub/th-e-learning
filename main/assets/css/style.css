@@ -252,6 +252,7 @@ button:active, button:focus {
   transition: opacity 0.3s linear, transform 0.3s ease-in-out;
   left: 0;
   top: 100%;
+  display: block;
 }
 .navbar .navbar-nav .nav-item:hover a.dropdown-toggle ~ .dropdown-menu {
   transform: translateY(0);
@@ -325,6 +326,7 @@ button:active, button:focus {
     opacity: 1;
     box-shadow: none;
     width: 350px;
+    display: none;
   }
   .navbar .navbar-nav .nav-item:hover a.dropdown-toggle ~ .dropdown-menu {
     transform: translateY(0);
