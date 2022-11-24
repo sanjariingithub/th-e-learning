@@ -28,35 +28,84 @@
         &--action{
             ul{
                 display: flex;
-                justify-content: space-between;
+                align-items: center;
                 li{
-                    &:not(:last-child){
-                        margin-right: 10px;
-                    }
+                   margin-left: 20px;
                     &:hover {
                         color:$primaryColor;
                     }
 
                     a {
                         color: #000000;
+                        display: block;
                     }
                 }
             }
           li{
             //design for sign-up button
+                a{
+                padding: 15px 20px;;
+                color: $primaryColor!important;
                 font-size: 1em;
-                font-weight: 700;         
+                font-weight: 700; 
+                width: 150px;
+                text-align: center; 
+                }    
           }
+          .main-btn__border{
+            overflow: hidden;
+            transition: all 0.3s linear;
+            position: relative;
+            &:hover {
+                background-color: $primaryColor;
+                span{
+                    color: #ffffff;
+                }
+                i{
+                    color: #ffffff;
+                }
+             }
+            span{
+                margin-left: 10px;
+                margin-right: 10px;
+               display: inline-block;
+               transition: transform 0.3s ease;
+               &:hover {
+                transform: translateX(10px);
+             }
+            }
+            &:hover i{
+                transform: translateY(-50%);
+                opacity: 1;
+            }
+
+          }
+         
+          .main-btn i{
+           
+            transform: translateY(100%);
+            display: inline-block;
+            font-size: 1em;
+            font-weight: 900;
+            transition: transform 0.3s ease,opacity 0.3s linear;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+           opacity: 0;
+           
+          }
+
           .icon-serach{
             font-size: 1.5em;
             font-weight: 700;
-            padding: 10px;
+            cursor: pointer;
 
           }
 
           .icon-actionbar {
             font-size: 1.5em;
             font-weight: 700;
+            cursor: pointer;
           }
 
            
@@ -86,7 +135,6 @@
                     color: #000000;
                     transition: color 0.3s linear;
                     position: relative;
-
                     &:hover {
                         color:$primaryColor;
                     }
@@ -99,6 +147,9 @@
                    color:$primaryColor;
 
                     &:after {
+                        width: 100%;
+                    }
+                    &:before{
                         width: 100%;
                     }
                }
@@ -119,6 +170,27 @@
 }
 .navbar-nav {
     .nav-item {
+        .nav-link{
+            padding-bottom: 8px;
+           // margin-left: 10px;
+           // margin-right: 10px;
+            //for bottom border
+            &:before{
+                content: "";
+                width: 0;
+                height: 2px;
+                background-color: $primaryColor;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transition: all 0.3s ease; 
+
+            }
+            &:hover:before{
+                width: 100%;
+            }
+
+        }
         a {
             &.dropdown-toggle {
                 &:after {
@@ -136,17 +208,7 @@
 
         &.dropdown {
             .dropdown-menu {
-                margin-top: 0;
-                margin-bottom: 0;
-                padding-top: 0;
-                padding-bottom: 0;
-                font-size: 1em;
-                border: 0;
-                border-radius: 5px;
-                box-shadow: 0 4px 11px 0 rgb(0 0 0 / 7%);
-                transform: translateY(10px);
-                
-
+               
                 li {
                     font-size: 1em;
                     font-weight: 500;
@@ -154,6 +216,9 @@
                     a {
                         padding-left: 0.8em;
                         padding-right: 0.8em;
+                        &:hover{
+                            color: $primaryColor;
+                        }
 
                         &:hover,
                         &:focus,
@@ -167,38 +232,120 @@
     }
 }
 
+.navbar {
+    .navbar-nav {
+        .nav-item {
+            a {
+                &.dropdown-toggle {
+                    &~.dropdown-menu {
+                        margin-top: 0px;
+                        margin-bottom: 0px;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        //display: inline-block;
+                        transform: translateY(10px);
+                        opacity: 0;
+                        pointer-events: none;
+                        transition: opacity 0.3s linear, transform 0.3s ease-in-out;
+                        left: 0;
+                        top: 100%;
+                    }
+                }
+            }
+
+            &:hover {
+                a.dropdown-toggle {
+                    &~.dropdown-menu {
+                        transform: translateY(0);
+                        opacity: 1;
+                        pointer-events: all;
+                    }
+                }
+            }
+
+            &.dropdown {
+                .dropdown-menu {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    box-shadow: 0 4px 11px 0 $boxshadowColor;
+                    border: none;
+                    width: 150px;
+
+                    li {
+                        &:not(:last-child) {
+                            margin-bottom: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 
 
 //off canvas 
-.offcanvas{
-    ul li{
-        padding: 10px;
-    }
-}
+
 //nav responsive
+
 @include breakpoint-max(991px){
     .navbar.navbar-expand-lg .nav-item {
          margin-left: 0px;
          margin-right: 0px;
          padding: 15px 15px;
          border-bottom: 1px solid #E3E3E3;
+         position: relative;
          
 }
+.navbar.navbar-expand-lg .nav-link.active:before {
+     width: 0%;
+}
+.navbar-nav {
+    .nav-item {
+        a{
+            &.icon-rotate {
+                &:after {
+                    transform: translateY(-50%) rotate(-180deg);
+                }
+            }
+        }
 
-
+        a.dropdown-toggle{
+            &:after {
+             position: absolute;
+            margin-left: 0;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            transition: transform 0.3s ease;
+            }
+        
+        }
+        .nav-link {
+             padding-bottom: 0;
+             &:before {
+                content: "";
+                width: 0;
+                height: 0;
+            }
+            
+            }
+       }
+    }
 .navbar{
     &-content{
         .offcanvas{
            .offcanvas-header{
                   button{
-                    font-size: 1.6em;
+                    font-size: 1.2em;
                   }
            }
         }
          &__item{
             &--action{
                 .main-btn {
-                    padding: 8px 30px;
+                    padding: 8px 10px;
                     font-size: 0.9em;
                      font-weight: 500;
                 }
@@ -213,7 +360,63 @@
     }
 }
 
+//responsive for dropdown
+
+.navbar {
+    .navbar-nav {
+        .nav-item {
+            a {
+                &.dropdown-toggle {
+                    &~.dropdown-menu {
+                        margin-top: 0px;
+                        margin-bottom: 0px;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        //display: inline-block;
+                        transform: translateY(0);                    
+                        pointer-events: none;
+                        left: 0;
+                        top: 100%;
+                        transition:none;
+                        opacity: 1;
+                        box-shadow: none;
+                        width: 350px;
+                    }
+                }
+            }
+
+            &:hover {
+                a.dropdown-toggle {
+                    &~.dropdown-menu {
+                        transform: translateY(0);
+                        opacity: 1;
+                        pointer-events: all;
+                    }
+                }
+            }
+
+            &.dropdown {
+                .dropdown-menu {
+                    li {
+                        &:not(:last-child) {
+                            margin-bottom: 5px;
+                            border-bottom: 1px solid #E3E3E3;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
+.navbar-content__item--action ul li {
+    margin-left: 10px;
+}
+//animation for toggle 
+
+}
+
+
+
 @include breakpoint-max(575px) {
     .navbar{
         &-content{
@@ -221,13 +424,13 @@
                 &__brand{
                     a{
                         img{
-                            max-width: 60%;
+                            max-width: 100%;
                         }
                     }
                 }
                 &--action{
                     .main-btn {
-                        padding: 4px 10px;
+                        padding: 3px 5px;
                         font-size: 0.9em;
                          font-weight: 500;
                     }
@@ -237,8 +440,22 @@
                         color: $primaryColor;
                         border-radius: 6px;
                     }
-                  .actionbar{
-                    font-size: 1em;
+                    .icon-serach{
+                        font-size: 1.2em;
+                    }
+                    .icon-actionbar{
+                    font-size: 1.2em;
+                  }
+                  .signin-icon{
+                     color: #000000!important;
+                     font-size: 1.2em;
+                     padding: 0;
+                     width: 100%;
+                     cursor: pointer;
+                     &:hover i{
+                        color: $primaryColor;
+                    }
+
                   }
                 }
              }
