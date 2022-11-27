@@ -3,6 +3,7 @@
 *****************************/
 
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@800&display=swap');
 
 
 html {
@@ -11,9 +12,11 @@ html {
 
 body {
     font-size: 1em;
-    font-family: 'Work Sans', sans-serif;
+//    font-family: 'Work Sans', sans-serif;
 }
-
-h1, h2, h3, h4, h5, h6 {
-   
+  p,a{
+    font-family: 'Work Sans', sans-serif; 
+}
+ h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', sans-serif; 
 }
