@@ -316,7 +316,7 @@
     .navbar.navbar-expand-lg .nav-item {
         margin-left: 0px;
         margin-right: 0px;
-        padding: 15px 15px;
+        padding: 10px 10px;
         border-bottom: 1px solid #E3E3E3;
         position: relative;
 
@@ -327,15 +327,7 @@
     }
 
     .navbar-nav {
-        .nav-item {
-            a {
-                &.icon-rotate {
-                    &:after {
-                        transform: translateY(-50%) rotate(-180deg);
-                    }
-                }
-            }
-
+        .nav-item {    
             a.dropdown-toggle {
                 &:after {
                     position: absolute;
@@ -374,10 +366,21 @@
             &__item {
                 &--action {
                     .main-btn {
-                        padding: 8px 10px;
+                        padding: 4px 4px;
                         font-size: 0.9em;
                         font-weight: 500;
+                        width: 90px;
+                        
                     }
+                    
+                .main-btn__border {
+                    span {
+                        &:hover {
+                            transform: none;
+                        }
+                    }
+
+                }
 
                     .icon-serach {
                         font-size: 1.5em;
@@ -400,8 +403,8 @@
                         &~.dropdown-menu {
                             margin-top: 0px;
                             margin-bottom: 0px;
-                            padding-top: 10px;
-                            padding-bottom: 10px;
+                            padding-top: 15px;
+                            padding-bottom: 0px;
                             //display: inline-block;
                             transform: translateY(0);
                             pointer-events: none;
@@ -429,9 +432,9 @@
                 &.dropdown {
                     .dropdown-menu {
                         li {
+                            border-top: 1px solid #E3E3E3;
                             &:not(:last-child) {
                                 margin-bottom: 5px;
-                                border-bottom: 1px solid #E3E3E3;
                             }
                         }
                     }
@@ -445,6 +448,9 @@
     }
 
     //animation for toggle 
+    .offcanvas.navbar-content__item .offcanvas-body .navbar-nav .nav-item a.icon-rotate:after {
+        transform: translateY(-50%) rotate(-180deg);
+    }
 
 }
 

@@ -24,6 +24,9 @@
 .pb-70 {
     padding-bottom: 70px;
 }
+.pt-70{
+    padding-top: 70px;
+}
 
 .pb-30 {
     padding-bottom: 30px;
@@ -35,4 +38,9 @@
 }
 .rotate-y-160 {
     transform: rotateY(160deg);
+}
+.rounded-background{
+    width:100%;
+    background-color:$background;
+    border-radius: 70px;
 }
