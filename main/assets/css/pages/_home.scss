@@ -13,7 +13,7 @@
         &-content{
            
           
-            h4{
+            h1{
                 font-size: 3em;
                 font-weight:900;
                 color:  #FAFAFA;
@@ -74,6 +74,36 @@
         }
 }
 }
+//explore section starts here 
+ .explore{
+    &-section{
+        &-header{
+            margin-bottom: 20px;
+        }
+        &-buttonpart{
+            display: flex;
+            justify-content: space-between;
+        }
+        &-buttons{
+            display: flex;
+            .main-btn{
+                &__border{
+                    padding: 8px 20px;
+                    background-color:#EEEEEE;
+                    color: #000000;
+                    border-radius: 5px;
+                    &:not(:last-child){
+                        margin-right: 10px;
+                    }
+
+                }
+            }
+        }
+        &-filter{
+            display: flex;
+        }
+    }
+ }
 //responsive 
 @include breakpoint-max(1399px) {
     .hero{
@@ -81,7 +111,7 @@
             &-content{
                 //padding-left: 55px;
                 //padding-right: 168px;
-                h4{
+                h1{
                     font-size: 2.5em;
                     font-weight:800;
                     color:  #FAFAFA;;
@@ -98,7 +128,7 @@
     .hero{
         &-section{
             &-content{
-                h4{
+                h1{
                     font-size: 2em;
                     font-weight:700;
                     color:  #FAFAFA;;
@@ -115,9 +145,9 @@
             &-section{
                 .rounded-background{
                    padding-bottom:0 ;
-                   padding-top: 50px;
-                   padding-left: 50px;
-                  padding-right: 50px;
+                   padding-top: 60px;
+                   padding-left: 60px;
+                  padding-right: 60px;
                   text-align: center;
                 }            
                 .image-cap{
@@ -145,7 +175,7 @@
                                 opacity: 0.4;;
                             }
                             &__append{
-                                padding: 18px 18px 18px;
+                                padding: 18px 23px 18px;
                                 color: #FAFAFA;
                                 background-color: $primaryColor;
                             }
@@ -173,7 +203,7 @@
             &-section{
                 .rounded-background{
                    padding-bottom:0 ;
-                   padding-top: 40px;
+                   padding-top: 50px;
                    padding-left: 40px;
                   padding-right: 40px;
                 } 
@@ -219,12 +249,12 @@
             &-section{
                 .rounded-background{
                    padding-bottom:0 ;
-                   padding-top: 30px;
+                   padding-top: 50px;
                    padding-left: 30px;
                   padding-right: 30px;
                 }    
                 &-content{
-                    h4{
+                    h1{
                         font-size: 1.5em;
                         font-weight:600;
                         color:  #FAFAFA;
@@ -240,8 +270,8 @@
                 .image-cap{
                     img{
                         right: 40%;
-                       top: -3%;
-                       width: 16.25%;
+                        top: -1%;
+                        width: 16.25%;
                       }
                     }
                 
@@ -277,12 +307,12 @@
             &-section{
                 .rounded-background{
                    padding-bottom:0 ;
-                   padding-top: 30px;
+                   padding-top: 40px;
                    padding-left: 30px;
                   padding-right: 30px;
                 }    
                 &-content{
-                    h4{
+                    h1{
                         font-size: 1em;
                         font-weight:500;
                         color:  #FAFAFA;
@@ -302,6 +332,7 @@
                         right: 40%;
                         top: -1.45%;
                         width: 16.25%;
+                        //display: none;
                       }
                     }
                 

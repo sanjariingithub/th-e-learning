@@ -222,6 +222,7 @@ input:focus, input:active {
 }
 .navbar-content__item--action .main-btn__border:hover span {
   color: #ffffff;
+  transform: translateX(10px);
 }
 .navbar-content__item--action .main-btn__border:hover i {
   color: #ffffff;
@@ -231,9 +232,6 @@ input:focus, input:active {
   margin-right: 10px;
   display: inline-block;
   transition: transform 0.3s ease;
-}
-.navbar-content__item--action .main-btn__border span:hover {
-  transform: translateX(10px);
 }
 .navbar-content__item--action .main-btn__border:hover i {
   transform: translateY(-50%);
@@ -379,8 +377,10 @@ input:focus, input:active {
     margin-left: 0px;
     margin-right: 0px;
     padding: 10px 10px;
-    border-bottom: 1px solid #E3E3E3;
     position: relative;
+  }
+  .navbar.navbar-expand-lg .nav-item:not(:last-child) {
+    border-bottom: 1px solid #E3E3E3;
   }
   .navbar.navbar-expand-lg .nav-link.active:before {
     width: 0%;
@@ -556,7 +556,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-section .rounded-background {
   position: relative;
 }
-.hero-section-content h4 {
+.hero-section-content h1 {
   font-size: 3em;
   font-weight: 900;
   color: #FAFAFA;
@@ -601,15 +601,38 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 357px;
 }
 
+.explore-section-header {
+  margin-bottom: 20px;
+}
+.explore-section-buttonpart {
+  display: flex;
+  justify-content: space-between;
+}
+.explore-section-buttons {
+  display: flex;
+}
+.explore-section-buttons .main-btn__border {
+  padding: 8px 20px;
+  background-color: #EEEEEE;
+  color: #000000;
+  border-radius: 5px;
+}
+.explore-section-buttons .main-btn__border:not(:last-child) {
+  margin-right: 10px;
+}
+.explore-section-filter {
+  display: flex;
+}
+
 @media (max-width: 1399px) {
-  .hero-section-content h4 {
+  .hero-section-content h1 {
     font-size: 2.5em;
     font-weight: 800;
     color: #FAFAFA;
   }
 }
 @media (max-width: 1199px) {
-  .hero-section-content h4 {
+  .hero-section-content h1 {
     font-size: 2em;
     font-weight: 700;
     color: #FAFAFA;
@@ -618,9 +641,9 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 991px) {
   .hero-section .rounded-background {
     padding-bottom: 0;
-    padding-top: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-top: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
     text-align: center;
   }
   .hero-section .image-cap img {
@@ -639,7 +662,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0.4;
   }
   .hero-section-content .custom-input__append {
-    padding: 18px 18px 18px;
+    padding: 18px 23px 18px;
     color: #FAFAFA;
     background-color: #05A8AA;
   }
@@ -651,7 +674,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 767px) {
   .hero-section .rounded-background {
     padding-bottom: 0;
-    padding-top: 40px;
+    padding-top: 50px;
     padding-left: 40px;
     padding-right: 40px;
   }
@@ -678,11 +701,11 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 575px) {
   .hero-section .rounded-background {
     padding-bottom: 0;
-    padding-top: 30px;
+    padding-top: 50px;
     padding-left: 30px;
     padding-right: 30px;
   }
-  .hero-section-content h4 {
+  .hero-section-content h1 {
     font-size: 1.5em;
     font-weight: 600;
     color: #FAFAFA;
@@ -696,7 +719,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   .hero-section .image-cap img {
     right: 40%;
-    top: -3%;
+    top: -1%;
     width: 16.25%;
   }
   .hero-section-content .custom-input__field {
@@ -716,11 +739,11 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 480px) {
   .hero-section .rounded-background {
     padding-bottom: 0;
-    padding-top: 30px;
+    padding-top: 40px;
     padding-left: 30px;
     padding-right: 30px;
   }
-  .hero-section-content h4 {
+  .hero-section-content h1 {
     font-size: 1em;
     font-weight: 500;
     color: #FAFAFA;
