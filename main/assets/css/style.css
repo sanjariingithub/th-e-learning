@@ -552,37 +552,64 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Sora", sans-serif;
 }
 
+input {
+  font-family: "Work Sans", sans-serif;
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1280px;
+  }
+}
 /*************** Home CSS ***************/
 .hero-section .rounded-background {
   position: relative;
 }
 .hero-section-content h1 {
-  font-size: 3em;
-  font-weight: 900;
+  font-size: 61px;
+  font-weight: 800;
   color: #FAFAFA;
   margin-bottom: 25px;
+  line-height: 1.3;
 }
 .hero-section-content p {
-  font-size: 0.8em;
-  font-weight: 500;
+  font-size: 1em;
+  font-weight: 700;
   color: #05A8AA;
   margin-bottom: 20px;
-  letter-spacing: 0.03em;
 }
 .hero-section-content .content-text {
-  font-size: 0.8em;
-  font-weight: 500;
+  font-size: 1em;
+  font-weight: 400;
   color: #FAFAFA;
   margin-bottom: 30px;
+  opacity: 0.6;
+}
+.hero-section-content .custom-input__group {
+  max-width: 325px;
 }
 .hero-section-content .custom-input__field {
+  display: flex;
   background-color: #0C0C0C;
-  opacity: 0.4;
+  opacity: 0.5;
+  align-items: center;
+  padding: 18px 20px;
+  font-weight: 400;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+}
+.hero-section-content .custom-input__field i {
+  padding: 5px;
 }
 .hero-section-content .custom-input__append {
-  padding: 18px 18px 18px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 18px 23px 18px 23px;
   color: #FAFAFA;
   background-color: #05A8AA;
+  font-weight: 700;
 }
 .hero-section .image-cap img {
   position: absolute;
@@ -591,12 +618,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 .hero-section .image-pen img {
   position: absolute;
-  bottom: 0;
+  bottom: 15px;
   right: 44%;
 }
 .hero-section-image img {
   position: absolute;
-  right: 40px;
+  right: 80px;
   bottom: 0;
   max-width: 357px;
 }
@@ -627,29 +654,45 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 1399px) {
   .hero-section-content h1 {
     font-size: 2.5em;
-    font-weight: 800;
     color: #FAFAFA;
   }
 }
 @media (max-width: 1199px) {
   .hero-section-content h1 {
     font-size: 2em;
-    font-weight: 700;
     color: #FAFAFA;
   }
 }
 @media (max-width: 991px) {
+  .hero-section .container {
+    max-width: 100%;
+  }
   .hero-section .rounded-background {
-    padding-bottom: 0;
-    padding-top: 60px;
-    padding-left: 60px;
-    padding-right: 60px;
-    text-align: center;
+    width: 100%;
+    background-color: #414770;
+    border-radius: 40px;
+    padding: 40px;
   }
   .hero-section .image-cap img {
-    right: 41%;
-    top: -2%;
-    width: 16%;
+    left: 50%;
+    top: 40px;
+    width: 150px;
+    transform: translateX(-50%);
+  }
+  .hero-section .image-pen img {
+    left: 5%;
+  }
+  .hero-section-content {
+    margin-bottom: 25px;
+  }
+  .hero-section-content p {
+    margin-bottom: 15px;
+  }
+  .hero-section-content h1 {
+    margin-bottom: 15px;
+  }
+  .hero-section-content .content-text {
+    margin-bottom: 20px;
   }
   .hero-section-content .custom-input__group {
     max-width: 335px;
@@ -667,8 +710,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #05A8AA;
   }
   .hero-section-image img {
-    position: unset;
-    max-width: 430px;
+    max-width: 385px;
   }
 }
 @media (max-width: 767px) {
@@ -745,7 +787,6 @@ h1, h2, h3, h4, h5, h6 {
   }
   .hero-section-content h1 {
     font-size: 1em;
-    font-weight: 500;
     color: #FAFAFA;
     margin-bottom: 15px;
   }
