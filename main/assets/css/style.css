@@ -98,12 +98,14 @@ input:focus, input:active {
   padding: 18px 0 18px 18px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+  font-size: 14px;
 }
 .custom-input__append {
   padding: 18px 18px 18px 0;
   color: #CE3C31;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+  font-size: 14px;
 }
 .custom-input__field {
   flex: 1;
@@ -172,6 +174,10 @@ input:focus, input:active {
     top: 2px;
   }
 }
+header {
+  margin-bottom: 48px;
+}
+
 .nav-link {
   padding: 0;
 }
@@ -564,57 +570,58 @@ input {
 /*************** Home CSS ***************/
 .hero-section .rounded-background {
   position: relative;
+  overflow: hidden;
 }
 .hero-section-content h1 {
   font-size: 61px;
   font-weight: 800;
   color: #FAFAFA;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   line-height: 1.3;
 }
 .hero-section-content p {
-  font-size: 1em;
+  font-size: 16px;
   font-weight: 700;
   color: #05A8AA;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 .hero-section-content .content-text {
-  font-size: 1em;
+  font-size: 16px;
   font-weight: 400;
   color: #FAFAFA;
-  margin-bottom: 30px;
+  margin-bottom: 48px;
   opacity: 0.6;
 }
 .hero-section-content .custom-input__group {
-  max-width: 325px;
+  max-width: 470px;
+  background-color: rgba(12, 12, 12, 0.4);
+  border-radius: 10px;
 }
 .hero-section-content .custom-input__field {
-  display: flex;
-  background-color: #0C0C0C;
-  opacity: 0.5;
-  align-items: center;
   padding: 18px 20px;
   font-weight: 400;
-  border-bottom-left-radius: 8px;
-  border-top-left-radius: 8px;
+  border-bottom-left-radius: 10px;
 }
-.hero-section-content .custom-input__field i {
-  padding: 5px;
+.hero-section-content .custom-input__prepend {
+  font-size: 14px;
+  color: #FAFAFA;
+  padding: 22px 20px 22px 11.5px;
 }
 .hero-section-content .custom-input__append {
-  border-top-right-radius: 8px;
-  border-bottom-left-radius: 8px;
-  border-top-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  padding: 18px 23px 18px 23px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 19px 40px 19px 40px;
   color: #FAFAFA;
   background-color: #05A8AA;
   font-weight: 700;
 }
 .hero-section .image-cap img {
   position: absolute;
-  right: 47%;
-  top: 5%;
+  right: 42%;
+  top: 45px;
+  transform: translateX(50%);
 }
 .hero-section .image-pen img {
   position: absolute;
@@ -625,9 +632,12 @@ input {
   position: absolute;
   right: 80px;
   bottom: 0;
-  max-width: 357px;
+  max-width: 450px;
 }
 
+.explore-section {
+  display: none;
+}
 .explore-section-header {
   margin-bottom: 20px;
 }
@@ -653,20 +663,59 @@ input {
 
 @media (max-width: 1399px) {
   .hero-section-content h1 {
-    font-size: 2.5em;
-    color: #FAFAFA;
+    font-size: 56px;
+  }
+  .hero-section-content p {
+    font-size: 15px;
+  }
+  .hero-section-content .content-text {
+    font-size: 15px;
+  }
+  .hero-section-content .custom-input__group {
+    max-width: 432px;
+  }
+  .hero-section-content .custom-input__field {
+    padding: 18px 20px;
+  }
+  .hero-section-content .custom-input__prepend {
+    padding: 22px 20px 22px 11.5px;
+  }
+  .hero-section-content .custom-input__append {
+    padding: 19px 40px 19px 40px;
+  }
+  .hero-section .image-cap img {
+    right: 40%;
+  }
+  .hero-section-image img {
+    max-width: 357px;
   }
 }
 @media (max-width: 1199px) {
   .hero-section-content h1 {
-    font-size: 2em;
-    color: #FAFAFA;
+    font-size: 50px;
+    margin-bottom: 15px;
+  }
+  .hero-section-content p {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  .hero-section-content .content-text {
+    font-size: 13px;
+    margin-bottom: 38px;
+  }
+  .hero-section-image img {
+    right: 40px;
+  }
+  .hero-section .image-cap img {
+    right: 35%;
+    top: 35px;
+  }
+  .hero-section .image-pen img {
+    bottom: 5px;
+    right: 40%;
   }
 }
 @media (max-width: 991px) {
-  .hero-section .container {
-    max-width: 100%;
-  }
   .hero-section .rounded-background {
     width: 100%;
     background-color: #414770;
@@ -674,147 +723,84 @@ input {
     padding: 40px;
   }
   .hero-section .image-cap img {
-    left: 50%;
-    top: 40px;
-    width: 150px;
-    transform: translateX(-50%);
-  }
-  .hero-section .image-pen img {
-    left: 5%;
-  }
-  .hero-section-content {
-    margin-bottom: 25px;
+    transform: none;
+    right: 24%;
+    top: 20px;
+    width: 115px;
   }
   .hero-section-content p {
-    margin-bottom: 15px;
+    font-size: 12px;
   }
   .hero-section-content h1 {
-    margin-bottom: 15px;
+    font-size: 40px;
   }
   .hero-section-content .content-text {
-    margin-bottom: 20px;
+    font-size: 12px;
+    margin-bottom: 30px;
   }
   .hero-section-content .custom-input__group {
-    max-width: 335px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hero-section-content .custom-input__field {
-    background-color: #0C0C0C;
-    opacity: 0.4;
-  }
-  .hero-section-content .custom-input__append {
-    padding: 18px 23px 18px;
-    color: #FAFAFA;
-    background-color: #05A8AA;
-  }
-  .hero-section-image img {
-    max-width: 385px;
+    max-width: 360px;
   }
 }
 @media (max-width: 767px) {
   .hero-section .rounded-background {
-    padding-bottom: 0;
     padding-top: 50px;
     padding-left: 40px;
     padding-right: 40px;
   }
-  .hero-section .image-cap img {
-    right: 41%;
-    top: -2%;
-    width: 18.25%;
+  .hero-section-content h1 {
+    font-size: 30px;
   }
-  .hero-section-content .custom-input__field {
-    background-color: #0C0C0C;
-    opacity: 0.4;
+  .hero-section-content .content-text {
+    margin-bottom: 20px;
   }
   .hero-section-content .custom-input__append {
     padding: 18px 18px 18px;
-    color: #FAFAFA;
-    background-color: #05A8AA;
-  }
-  .hero-section-image img {
-    position: unset;
-    text-align: center;
-    max-width: 300px;
   }
 }
 @media (max-width: 575px) {
   .hero-section .rounded-background {
-    padding-bottom: 0;
     padding-top: 50px;
     padding-left: 30px;
     padding-right: 30px;
   }
   .hero-section-content h1 {
-    font-size: 1.5em;
-    font-weight: 600;
-    color: #FAFAFA;
-    margin-bottom: 15px;
-  }
-  .hero-section-content p {
-    margin-bottom: 10px;
+    font-size: 30px;
   }
   .hero-section-content .content-text {
     margin-bottom: 25px;
   }
-  .hero-section .image-cap img {
-    right: 40%;
-    top: -1%;
-    width: 16.25%;
-  }
-  .hero-section-content .custom-input__field {
-    background-color: #0C0C0C;
-    opacity: 0.4;
+  .hero-section-content .custom-input__group {
+    max-width: 310px;
   }
   .hero-section-content .custom-input__append {
-    padding: 18px 18px 18px;
-    color: #FAFAFA;
-    background-color: #05A8AA;
-  }
-  .hero-section-image img {
-    position: unset;
-    max-width: 210px;
+    padding: 18px 10px 18px 10px;
   }
 }
 @media (max-width: 480px) {
   .hero-section .rounded-background {
-    padding-bottom: 0;
     padding-top: 40px;
     padding-left: 30px;
     padding-right: 30px;
   }
   .hero-section-content h1 {
-    font-size: 1em;
-    color: #FAFAFA;
-    margin-bottom: 15px;
+    font-size: 25px;
+    margin-bottom: 12px;
   }
   .hero-section-content p {
     margin-bottom: 10px;
-    font-size: 0.7em;
   }
   .hero-section-content .content-text {
-    margin-bottom: 25px;
-    font-size: 0.7em;
-  }
-  .hero-section .image-cap img {
-    right: 40%;
-    top: -1.45%;
-    width: 16.25%;
+    margin-bottom: 20px;
   }
   .hero-section-content .custom-input__field {
-    background-color: #0C0C0C;
-    opacity: 0.4;
+    padding: 5px 8px;
+  }
+  .hero-section-content .custom-input__prepend {
+    padding: 20px 8px 20px 8px;
   }
   .hero-section-content .custom-input__append {
-    padding: 18px 18px 18px;
-    color: #FAFAFA;
-    background-color: #05A8AA;
-  }
-  .hero-section-image img {
-    position: unset;
-    max-width: 210px;
+    padding: 10px 10px 10px 10px;
   }
 }
 h1, h2, h3, h4, h5, h6 {

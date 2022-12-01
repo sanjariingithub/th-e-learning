@@ -3,6 +3,9 @@
 @use '../abstracts/mixins' as *;
 
 // Overrides Bootstrap
+header{
+    margin-bottom: 48px;
+}
 .nav-link {
     padding: 0;
 }

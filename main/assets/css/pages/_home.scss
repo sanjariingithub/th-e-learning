@@ -8,6 +8,7 @@
     &-section{
         .rounded-background{
             position: relative;
+            overflow: hidden;
            
         }
         &-content{
@@ -17,47 +18,46 @@
                 font-size: 61px;
                 font-weight:800;
                 color:  #FAFAFA;
-                margin-bottom: 25px;
+                margin-bottom: 20px;
                 line-height: 1.3;
             }
             p{
-                font-size: 1em;
+                font-size: 16px;
                 font-weight: 700;
                 color:$primaryColor;
-                margin-bottom: 20px;
+                margin-bottom: 16px;
                
             }
             .content-text{
-                font-size:1em;
+                font-size:16px;
                 font-weight: 400;
                 color:#FAFAFA ;
-                margin-bottom: 30px;
+                margin-bottom:48px;
                 opacity: 0.6;
             }
             .custom{
                 &-input{
                     &__group{
-                        max-width: 325px;
+                        max-width: 470px;
+                        background-color: rgb(12 12 12 / 40%);
+                        border-radius: 10px;
                     }
                     &__field{
-                        display: flex;
-                        background-color:  #0C0C0C;
-                        opacity: 0.5;
-                        align-items: center;
                         padding: 18px 20px;
                         font-weight: 400;
-                        border-bottom-left-radius: 8px;
-                        border-top-left-radius: 8px;
-                        i{
-                            padding: 5px;
-                        }
+                        border-bottom-left-radius: 10px;
+                    }
+                    &__prepend{
+                        font-size: 14px;  
+                        color: #FAFAFA;
+                        padding: 22px 20px 22px 11.5px;
                     }
                     &__append{
-                        border-top-right-radius: 8px;
-                        border-bottom-left-radius: 8px;
-                        border-top-left-radius: 8px;
-                        border-bottom-right-radius: 8px;
-                        padding: 18px 23px 18px 23px;
+                        border-top-right-radius: 10px;
+                        border-bottom-left-radius: 10px;
+                        border-top-left-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                        padding: 19px 40px 19px 40px;
                         color: #FAFAFA;
                         background-color: $primaryColor;
                         font-weight: 700;
@@ -68,8 +68,9 @@
         .image-cap{
            img{
             position: absolute;
-            right: 47%;
-            top: 5%;
+            right: 42%;
+            top: 45px;
+            transform: translateX(50%);
             
          }
   }
@@ -87,7 +88,7 @@
                position: absolute;
                right: 80px;
                bottom: 0;
-              max-width: 357px;
+              max-width: 450px;
             }
            
         }
@@ -96,6 +97,7 @@
 //explore section starts here 
  .explore{
     &-section{
+        display: none;
         &-header{
             margin-bottom: 20px;
         }
@@ -131,11 +133,46 @@
                 //padding-left: 55px;
                 //padding-right: 168px;
                 h1{
-                    font-size: 2.5em;
-                    color:  #FAFAFA;;
+                    font-size: 56px;
+                }
+                p{
+                    font-size: 15px;
+                }
+                .content-text{
+                    font-size: 15px;
+                }
+                .custom{
+                    &-input{
+                        &__group{
+                            max-width: 432px;
+                        
+                        }
+                        &__field{
+                            padding: 18px 20px;
+                        }
+                        &__prepend{
+                            padding: 22px 20px 22px 11.5px;
+                        }
+                        &__append{
+                            padding: 19px 40px 19px 40px;
+                          
+                        }
+                    }
                 }
                 
-            }          
+            }   
+            .image-cap{
+                img{
+                  right: 40%;          
+                }
+                  
+            }   
+            &-image{
+                img{
+                  max-width: 357px;
+                }
+               
+            }    
            
     }
     }
@@ -147,10 +184,41 @@
         &-section{
             &-content{
                 h1{
-                    font-size: 2em;
-                    color:  #FAFAFA;;
+                    font-size: 50px;
+                    margin-bottom: 15px;
                     }
+                    p{
+                        font-size: 13px;
+                        margin-bottom: 12px;
+                    }
+                    .content-text{
+                        font-size: 13px;
+                        margin-bottom: 38px;
+                    }
+
                 }
+                &-image{
+                    img{
+                        right: 40px;
+                    }
+                   
+                }
+                .image-cap{
+                    img{
+                         right: 35%;
+                         top:35px;
+                
+                    }
+                      
+                }
+                .image-pen {
+                      img{
+                        bottom: 5px;
+                        right: 40%;
+                      }
+                   }
+               
+                
                 
             }
            
@@ -160,9 +228,9 @@
     @include breakpoint-max(991px) {
         .hero{
             &-section{
-                .container{
-                    max-width: 100%;
-                }
+                //.container{
+                 //   max-width: 100%;
+                //}
                 .rounded-background{
                     //padding-bottom: 0;
                     //padding-top: 50px;
@@ -172,63 +240,45 @@
                     width: 100%;
                    background-color: #414770;
                   border-radius: 40px;
-                  padding: 40px
+                 padding: 40px
                 }            
                 .image-cap{
                     img{
-                       left: 50%;
-                       top: 40px;
-                       width: 150px;
-                       transform: translateX(-50%);
+                        transform: none;
+                        right: 24%;
+                        top: 20px;
+                        width: 115px;
                 
                     }
                       
                 }
-                .image-pen{
-                    img{
-                       left: 5%;
-                    }
-                }
-                    
+                
                 
                 &-content{
-                    margin-bottom: 25px;
+                   
                     p{
-                        margin-bottom: 15px;
+                       font-size: 12px;  
                     }
                     h1{
-                        margin-bottom: 15px;
+                      font-size: 40px;  
                     }  
                     .content-text{
-                        margin-bottom: 20px;
+                        font-size: 12px;
+                        margin-bottom: 30px;
                     }         
                     .custom{
                         &-input{
-                            &__group{
-                                max-width: 335px;
-                                width: 100%;
-                                margin-left: auto;
-                                margin-right: auto;
+                            &__group{                                       
+                                max-width: 360px;
                             }
                             &__field{
-                                background-color:  #0C0C0C;
-                                opacity: 0.4;;
+                               
                             }
                             &__append{
-                                padding: 18px 23px 18px;
-                                color: #FAFAFA;
-                                background-color: $primaryColor;
+                               
                             }
                         }
                     }
-                }
-               
-                &-image{
-                    img{
-                     // position: unset;
-                      max-width: 385px;
-                    }
-                   
                 }
             }
         }
@@ -242,44 +292,48 @@
         .hero{
             &-section{
                 .rounded-background{
-                   padding-bottom:0 ;
+                   //padding-bottom:0 ;
                    padding-top: 50px;
                    padding-left: 40px;
                   padding-right: 40px;
                 } 
                            
-                .image-cap{
-                    img{
-                        right: 41%;
-                        top: -2%;
-                        width: 18.25%;
-                      }
-                    }
+                //.image-cap{
+                   // img{
+                     //   right: 41%;
+                     //   top: -2%;
+                     //   width: 18.25%;
+                     // }
+                   // }
                 
-                &-content{           
+                &-content{ 
+                    h1{
+                        font-size: 30px;
+                    }   
+                    .content-text{
+                       
+                        margin-bottom: 20px;
+                    } 
+
                     .custom{
                         &-input{
                             &__field{
-                                background-color:  #0C0C0C;
-                                opacity: 0.4;;
                             }
                             &__append{
                                 padding: 18px 18px 18px;
-                                color: #FAFAFA;
-                                background-color: $primaryColor;
                             }
                         }
                     }
                 }
                
-                &-image{
-                    img{
-                      position: unset;
-                      text-align: center;
-                      max-width: 300px
-                    }
+               // &-image{
+                  //  img{
+                   //   position: unset;
+                    //  text-align: center;
+                    //  max-width: 300px
+                  //  }
                    
-                }
+               // }
             }
         }
     }
@@ -288,55 +342,35 @@
         .hero{
             &-section{
                 .rounded-background{
-                   padding-bottom:0 ;
+                  // padding-bottom:0 ;
                    padding-top: 50px;
                    padding-left: 30px;
                   padding-right: 30px;
                 }    
                 &-content{
                     h1{
-                        font-size: 1.5em;
-                        font-weight:600;
-                        color:  #FAFAFA;
-                        margin-bottom: 15px;
+                        font-size: 30px;
                         }
-                        p{
-                            margin-bottom: 10px;
-                        }
-                        .content-text{
+                        .content-text{                          
                             margin-bottom: 25px;
-                        }
+                        }   
                     }        
-                .image-cap{
-                    img{
-                        right: 40%;
-                        top: -1%;
-                        width: 16.25%;
-                      }
-                    }
-                
                 &-content{           
                     .custom{
                         &-input{
+                            &__group{
+                                max-width: 310px;
+                            
+                            }
                             &__field{
-                                background-color:  #0C0C0C;
-                                opacity: 0.4;;
+
                             }
                             &__append{
-                                padding: 18px 18px 18px;
-                                color: #FAFAFA;
-                                background-color: $primaryColor;
+                                padding: 18px 10px 18px 10px;
+                               
                             }
                         }
                     }
-                }
-               
-                &-image{
-                    img{
-                      position: unset;
-                      max-width: 210px
-                    }
-                   
                 }
             }
         }
@@ -346,57 +380,50 @@
         .hero{
             &-section{
                 .rounded-background{
-                   padding-bottom:0 ;
+                  // padding-bottom:0 ;
                    padding-top: 40px;
                    padding-left: 30px;
                   padding-right: 30px;
                 }    
                 &-content{
                     h1{
-                        font-size: 1em;
-                        color:  #FAFAFA;
-                        margin-bottom: 15px;
+                        font-size: 25px;
+                        margin-bottom: 12px;
+                        
                         }
                         p{
-                            margin-bottom: 10px;
-                            font-size: 0.7em;
+                          margin-bottom: 10px;
+                          
                         }
                         .content-text{
-                            margin-bottom: 25px;
-                            font-size: 0.7em;
+                          margin-bottom: 20px; 
                         }
                     }        
-                .image-cap{
-                    img{
-                        right: 40%;
-                        top: -1.45%;
-                        width: 16.25%;
+               // .image-cap{
+                   // img{
+                       // right: 40%;
+                       // top: -1.45%;
+                       // width: 16.25%;
                         //display: none;
-                      }
-                    }
+                    //  }
+                   // }
                 
                 &-content{           
                     .custom{
                         &-input{
                             &__field{
-                                background-color:  #0C0C0C;
-                                opacity: 0.4;;
+                                padding: 5px 8px;
+                               
+                            }
+                            &__prepend{
+                                padding: 20px 8px 20px 8px;
                             }
                             &__append{
-                                padding: 18px 18px 18px;
-                                color: #FAFAFA;
-                                background-color: $primaryColor;
+                                padding: 10px 10px 10px 10px;
+                               
                             }
                         }
                     }
-                }
-               
-                &-image{
-                    img{
-                      position: unset;
-                      max-width: 210px
-                    }
-                   
                 }
             }
         }
