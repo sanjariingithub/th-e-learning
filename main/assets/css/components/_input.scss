@@ -16,11 +16,11 @@ input {
 }
 
 .custom-input {
-    &-group {
+    &__group {
         display: flex;
     }
 
-    &-prepend {
+    &__prepend {
         padding: 16px 0 16px 18px;
         font-size: 14px;
         color: $black;
@@ -29,7 +29,7 @@ input {
         border-bottom-left-radius: 10px;
     }
 
-    &-append {
+    &__append {
         padding: 16px 18px 16px 0;
         font-size: 14px;
         color: $black;
@@ -38,7 +38,7 @@ input {
         border-bottom-right-radius: 10px;
     }
 
-    &-field {
+    &__field {
         padding: 16px 18px;
         border-radius: 10px;
         background: rgba(217, 217, 217, 0.2);
