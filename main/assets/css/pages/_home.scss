@@ -8,12 +8,9 @@
     &-section{
         .rounded-background{
             position: relative;
-            overflow: hidden;
-           
+            overflow: hidden;          
         }
-        &-content{
-           
-          
+        &-content{      
             h1{
                 font-size: 61px;
                 font-weight:800;
@@ -25,8 +22,7 @@
                 font-size: 16px;
                 font-weight: 700;
                 color:$primaryColor;
-                margin-bottom: 16px;
-               
+                margin-bottom: 16px;              
             }
             .content-text{
                 font-size:16px;
@@ -56,7 +52,7 @@
                     }
                     &__prepend{
                         font-size: 14px;  
-                        color: #FAFAFA;
+                        color: rgba(250, 250, 250, 0.4);
                         padding: 20px 0 20px 20px;
                         border-radius: 0;
                         background-color: transparent;
@@ -74,63 +70,79 @@
         .image-cap{
            img{
             position: absolute;
-            right: 42%;
-            top: 45px;
+            right: 43%;
+            top: 30px;
             transform: translateX(50%);
             
-         }
-  }
+        }
+    }
       .image-pen{
         img{
             position: absolute;
             bottom: 15px;
-             right: 44%;
-        }
-      }
-  
-       
+            right: 44%;
+            }
+        } 
+        .image-ellipse{
+            img{
+                position: absolute;
+                right: -40px;
+                top: -8%;
+                transform: translateY(-10%);
+            }
+        }  
         &-image{
             img{
                position: absolute;
                right: 80px;
                bottom: 0;
               max-width: 450px;
-            }
-           
-        }
-}
-}
-//explore section starts here 
- .explore{
-    &-section{
-        display: none;
-        &-header{
-            margin-bottom: 20px;
-        }
-        &-buttonpart{
-            display: flex;
-            justify-content: space-between;
-        }
-        &-buttons{
-            display: flex;
-            .main-btn{
-                &__border{
-                    padding: 8px 20px;
-                    background-color:#EEEEEE;
-                    color: #000000;
-                    border-radius: 5px;
-                    &:not(:last-child){
-                        margin-right: 10px;
-                    }
-
-                }
-            }
-        }
-        &-filter{
-            display: flex;
+            }         
         }
     }
- }
+}
+//explore section starts here 
+ .explore-section{
+    &-buttonpart{
+        display: flex;
+        justify-content: space-between;
+       }
+       &-buttons{
+        display: flex;
+        li{
+            border: 1px ;
+            border-radius: 10px;
+            background-color: rgb(238 238 238 / 70%);
+            &:not(:last-child) {
+                margin-right: 16px;
+            }
+            
+        }
+       }  
+        .all{
+            color: $primaryColor;
+            padding: 5px 32px 5px 32px;
+            background: rgba(5, 168, 170, 0.1);
+            border-style: solid;
+            border-color: rgba(5, 168, 170, 0.2);
+        }
+        .popular{
+            padding: 5px 32px 5px 33px;
+            color: rgb(0 0 0 / 40%);
+        }
+        .latest{
+            padding: 5px 37px 5px 37px;
+            color: rgb(0 0 0 / 40%);
+        }
+        .free{
+            padding: 5px 44px 5px 44px;
+            color: rgb(0 0 0 / 40%);
+        }
+       
+       &-filter{
+        display: flex;
+       }
+    }
 //responsive 
 @include breakpoint-max(1399px) {
     .hero{
@@ -150,40 +162,24 @@
                 .custom{
                     &-input{
                         &__group{
-                            max-width: 432px;
-                        
+                           max-width: 432px;                    
                         }
-                        // &__field{
-                        //     padding: 18px 20px;
-                        // }
-                        // &__prepend{
-                        //     padding: 22px 20px 22px 11.5px;
-                        // }
-                        // &__append{
-                        //     padding: 19px 40px 19px 40px;
-                          
-                        // }
                     }
-                }
-                
+                }               
             }   
             .image-cap{
                 img{
                   right: 40%;          
-                }
-                  
+                }                
             }   
             &-image{
                 img{
                   max-width: 357px;
                 }
                
-            }    
-           
+            }              
+        }
     }
-    }
-
-
 }
 @include breakpoint-max(1199px) {
     .hero{
@@ -201,35 +197,21 @@
                         font-size: 13px;
                         margin-bottom: 38px;
                     }
-
                 }
                 &-image{
                     img{
                         right: 40px;
-                    }
-                   
+                        max-width: 300px;
+                    }                  
                 }
                 .image-cap{
                     img{
-                         right: 35%;
-                         top:35px;
-                
-                    }
-                      
-                }
-                .image-pen {
-                      img{
-                        bottom: 5px;
-                        right: 40%;
-                      }
-                   }
-               
-                
-                
-            }
-           
-           
-    }
+                        right: 35%;
+                        top: 20px;              
+                    }                    
+                }             
+            }          
+        }
     }
     @include breakpoint-max(991px) {
         .hero{
@@ -244,24 +226,26 @@
                     //padding-right: 40px;
                  // text-align: center;
                     width: 100%;
-                   background-color: #414770;
-                  border-radius: 40px;
-                 padding: 40px
+                    background-color: #414770;
+                    border-radius: 40px;
+                    padding: 40px
                 }            
                 .image-cap{
                     img{
                         transform: none;
-                        right: 24%;
-                        top: 20px;
-                        width: 115px;
-                
+                        right:25%;
+                        top: 13px;
+                        width: 115px;               
+                    }                      
+                } 
+                .image-ellipse{
+                    img{
+                        right: -50px;
+                        top: -15%;
+                        transform: translateY(-12%);
                     }
-                      
-                }
-                
-                
-                &-content{
-                   
+                }                
+                &-content{                
                     p{
                        font-size: 12px;  
                     }
@@ -277,24 +261,13 @@
                             &__group{                                       
                                 max-width: 360px;
                             }
-                            &__field{
-                               
-                            }
-                            &__append{
-                               
-                            }
                         }
                     }
                 }
             }
         }
     }
-        
-
-    
-
-
-    @include breakpoint-max(767px) {
+ @include breakpoint-max(767px) {
         .hero{
             &-section{
                 .rounded-background{
@@ -316,17 +289,23 @@
                     h1{
                         font-size: 30px;
                     }   
-                    .content-text{
-                       
-                        margin-bottom: 20px;
+                    .content-text{                    
+                        margin-bottom: 25px;
                     } 
-
                     .custom{
                         &-input{
+                            &__group{
+                                max-width: 270px;
+                            }
                             &__field{
+                                padding: 10px;
+                            }
+
+                            &__prepend{
+                                padding: 15px 0 15px 15px;
                             }
                             &__append{
-                                padding: 18px 18px 18px;
+                                padding: 10px 20px 10px 20px;                             
                             }
                         }
                     }
@@ -352,28 +331,12 @@
                    padding-top: 50px;
                    padding-left: 30px;
                   padding-right: 30px;
-                }    
-                &-content{
-                    h1{
-                        font-size: 30px;
-                        }
-                        .content-text{                          
-                            margin-bottom: 25px;
-                        }   
-                    }        
+                }           
                 &-content{           
                     .custom{
                         &-input{
-                            &__group{
-                                max-width: 310px;
-                            
-                            }
-                            &__field{
-
-                            }
-                            &__append{
-                                padding: 18px 10px 18px 10px;
-                               
+                            &__prepend{                             
+                                padding: 10px 0 10px 10px;                         
                             }
                         }
                     }
@@ -381,8 +344,7 @@
             }
         }
     }
-        
-    @include breakpoint-max(480px) {
+ @include breakpoint-max(480px) {
         .hero{
             &-section{
                 .rounded-background{
@@ -405,32 +367,13 @@
                           margin-bottom: 20px; 
                         }
                     }        
-               // .image-cap{
-                   // img{
-                       // right: 40%;
-                       // top: -1.45%;
-                       // width: 16.25%;
-                        //display: none;
-                    //  }
-                   // }
-                
-                &-content{           
-                    .custom{
-                        &-input{
-                            &__field{
-                                padding: 5px 8px;
-                               
-                            }
-                            &__prepend{
-                                padding: 20px 8px 20px 8px;
-                            }
-                            &__append{
-                                padding: 10px 10px 10px 10px;
-                               
-                            }
+                    .image-ellipse{
+                        img{
+                            right: -70px;
+                            top: -14%;
+                            transform: translateY(-12%);
                         }
-                    }
-                }
+                    }     
             }
         }
     }

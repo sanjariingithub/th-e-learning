@@ -122,11 +122,11 @@
     <div class="offcanvas-body">
       <div class="navbar-search">
         <div class="custom-input__group">
-          <input type="text" placeholder="Search..." class="custom-input__field" />
+          <input type="text" placeholder="Search..." class="custom-input__field">
           <button class="custom-input__append">
-            <i class="las la-search"></i>
+            <i class="las la-search rotate-y-160"></i>
           </button>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+          <button type="button" class="cancel-button"  data-bs-dismiss="offcanvas" aria-label="Close">
             <i class="las la-times"></i>
           </button>
         </div>
@@ -140,10 +140,13 @@
       <div class="hero-section-main rounded-background ">
         <div class="row align-items-center">
           <div class="image-cap d-none d-md-block">
-            <img src="assets/img/herose_cap.png" alt="cap">
+            <img src="assets/img/herocap.png" alt="cap">
           </div>
           <div class="image-pen d-none d-xl-block">
             <img src="assets/img/heropen.png" alt="">
+          </div>
+          <div class="image-ellipse">
+            <img src="assets/img/ellipse .png" alt="">
           </div>
           <!-- <div class="col-lg-7 col-xl-6">-->
           <div class="col-lg-9 col-xl-8">
@@ -177,20 +180,20 @@
   <section class="explore-section pb-100  ">
     <div class="container">
       <div class="explore-section-main">
-        <div class="explore-section-header">
+        <div class="section-header">
           <h2>Explore Our Courses</h2>
         </div>
         <div class="explore-section-buttonpart">
-          <div class="explore-section-buttons">
-            <button class="main-btn__border">All</button>
-            <button class="main-btn__border">Popular</button>
-            <button class="main-btn__border">Latest</button>
-            <button class="main-btn__border">Free</button>
-          </div>
-          <div class="explore-section-filter">
+          <ul class="explore-section-buttons">
+            <li class="all">All</li>
+            <li class="popular">Popular</li>
+            <li class="latest">Latest</li>
+            <li class="free">Free</li>
+          </ul>
+          <ul class="explore-section-filter">
             <p>filter by </p>
-            <button class="main-btn">difficulty</button>
-          </div>
+            <li >difficulty</li>
+          </ul>
 
         </div>
       </div>

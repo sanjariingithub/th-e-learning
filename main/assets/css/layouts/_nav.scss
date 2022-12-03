@@ -309,6 +309,48 @@ header{
 
 
 //off canvas 
+.offcanvas.offcanvas-top {
+    height: 130px;
+}
+.navbar{
+    &-search{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        position: relative;
+        .cancel-button{
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            font-size: 25px;
+            color: $black;
+            transform: translateY(-50%); 
+        }
+         .custom-input{
+            &__field{
+                padding: 10px 15px;
+                border-color:rgb(12 12 12 / 10%);
+                border-style: solid;
+                border-width: 1px 0 1px 1px;
+            }
+            &__group{
+                width: 100%;
+                max-width: 500px;
+            }
+            &__append{
+                padding: 10px 15px 10px 15px;
+                color:$primaryColor;
+                font-weight: 700;
+                font-size: 18px;
+                border-color: rgba(12, 12, 12, 0.1);
+               border-style: solid;
+               border-width: 1px 1px 1px 0;
+            }
+        }
+    }
+    
+}
 
 //nav responsive
 
@@ -454,6 +496,18 @@ header{
         transform: translateY(-50%) rotate(-180deg);
     }
 
+}
+@include breakpoint-max(767px){
+    .navbar{
+        &-search{
+            .cancel-button{
+                right: 0;
+                top: -14px;
+                transform: none; 
+                font-size: 20px;
+             }
+        }
+    }
 }
 
 
