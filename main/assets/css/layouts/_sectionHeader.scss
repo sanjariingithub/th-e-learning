@@ -1,5 +1,6 @@
 // Add variables here
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 // Add styles here
 //.section-header {
@@ -36,4 +37,20 @@
         color: $black;
         margin-bottom: 32px;
     }
+}
+@include breakpoint-max(991px) {
+    .section-header{
+        h2{
+            font-size: 40px;
+        }
+    }
+
+}
+@include breakpoint-max(575px) {
+    .section-header{
+        h2{
+            font-size: 30px;
+        }
+    }
+
 }

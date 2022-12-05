@@ -1,0 +1,12 @@
+// Add variables here
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.product-card {
+    &-box{
+        border: 1px solid rgb(12 12 12 / 10%);
+        border-radius: 10px;
+        padding: 16px 16px 0px 16px;
+    }
+
+}

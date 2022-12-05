@@ -65,4 +65,9 @@ jQuery(function ($) {
         }
     });
 
+    //selection tab
+$(".explore-section-buttonpart explore-section-buttons li").on('click','ul li', function () {
+    $(this).addClass('active').siblings().removeClass('active')
+});
+
 });

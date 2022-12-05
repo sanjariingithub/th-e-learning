@@ -150,6 +150,7 @@ header{
                 position: relative;
 
                 &:hover {
+                   
                     color: $primaryColor;
                 }
 
@@ -262,8 +263,9 @@ header{
                     &~.dropdown-menu {
                         margin-top: 0px;
                         margin-bottom: 0px;
-                        padding-top: 10px;
-                        padding-bottom: 10px;
+                        padding: 10px;
+                        //padding-top: 10px;
+                        //padding-bottom: 10px;
                         //display: inline-block;
                         transform: translateY(10px);
                         opacity: 0;
@@ -292,7 +294,7 @@ header{
                     padding-bottom: 10px;
                     box-shadow: 0 4px 11px 0 $boxshadowColor;
                     border: none;
-                    width: 150px;
+                    width: 200px;
 
                     li {
                         &:not(:last-child) {
